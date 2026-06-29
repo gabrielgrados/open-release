@@ -4,6 +4,7 @@ import { InputComponent } from '@app/shared/ui/input/input.component';
 import { ButtonComponent } from "@app/shared/ui/button/button.component";
 import { form, required, FormField, FormRoot, submit, disabled } from '@angular/forms/signals';
 import { LoginData } from '@app/core/models/login/login.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login.component',
@@ -17,6 +18,7 @@ export class LoginComponent {
     username: "",
     password: ""
   });
+  
 
   isSubmitting = signal(false);
   disabled = signal(true);
@@ -25,6 +27,8 @@ export class LoginComponent {
     required(path.username, {message: "Usuario es requerido"})
     required(path.password, {message: "Contraseña es requerida"})
   })
+
+  constructor(private router: Router){}
   
   async onSubmitHandler(){
     await submit(this.loginForm, async(form) => {
@@ -32,6 +36,7 @@ export class LoginComponent {
       try{  
         const value = form().value();
         console.log("Login: ",value)
+        this.router.navigate(["dashboard"]);
       }finally{
         this.isSubmitting.set(false);
       }
