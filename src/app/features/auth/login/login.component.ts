@@ -24,16 +24,13 @@ export class LoginComponent {
   loginForm = form(this.login, path => {
     required(path.username, {message: "Usuario es requerido"})
     required(path.password, {message: "Contraseña es requerida"})
-    disabled(path, {
-      when: () => this.disabled()
-    });
   })
   
   async onSubmitHandler(){
     await submit(this.loginForm, async(form) => {
       this.isSubmitting.set(true);
       try{  
-        const value = form().value;
+        const value = form().value();
         console.log("Login: ",value)
       }finally{
         this.isSubmitting.set(false);
@@ -41,8 +38,6 @@ export class LoginComponent {
     })
   }
 
-  activarInputs(){
-    this.disabled.update(prev =>  !prev);
-  }
+ 
   
 }

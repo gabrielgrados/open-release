@@ -1,8 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import 'tailwindcss';
+@import './assets/css/variables.css';
 
 
 @theme{
-    --spacing-control: 3rem;
+    --spacing-control: var(--control-height);
+    --color-primary: rgb(var(--color-primary-rgb));
+    --shadow-button: 0 0 2px rgba(0,0,0,.5);
 }

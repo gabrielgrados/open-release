@@ -1,0 +1,6 @@
+:root{
+    --control-height: 3.5rem;
+    --color-primary-rgb: 255, 141, 54;
+    --color-primary: rgb(var(--color-primary-rgb));
+    --input-placeholder-color: rgb(100,100,100);
+}

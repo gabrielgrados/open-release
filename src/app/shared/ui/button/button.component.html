@@ -1,3 +1,9 @@
-<div class="w-full">
-    <button [type]="type()" (click)="onButtonClickHandler()">{{text()}}</button>
+<div class="w-full h-control flex justify-center items-center text-white">
+  <button
+    [type]="type()"
+    (click)="onButtonClickHandler()"
+    class="bg-primary rounded-xl w-full h-full shadow-button cursor-pointer duration-300 hover:scale-[101%] ease-in-out"
+  >
+    {{ text() }}
+  </button>
 </div>

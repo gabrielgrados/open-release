@@ -8,7 +8,8 @@ import { FieldState, FieldTree, FormField, ValidationError } from "@angular/form
     selector: "input-component",
     standalone: true,
     imports: [CommonModule],
-    templateUrl: "./input.component.html"
+    templateUrl: "./input.component.html",
+    styleUrl: "./input.component.css"
 })
 export class InputComponent{
     value = model<string>("");

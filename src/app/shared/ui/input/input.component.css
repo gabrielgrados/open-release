@@ -1,0 +1,30 @@
+.input-component label{
+    transform: translateY(60%);
+    position: absolute;
+    padding-left: 1rem;
+    pointer-events: none;
+    transition: 200ms;
+    color: var(--input-placeholder-color);
+}
+
+.input-component{
+    position: relative;
+}
+
+.input-component input:focus ~ label {
+    font-size: .75em;
+    top: -3%;
+}
+
+.input-component input:not(:placeholder-shown) ~ label{
+    font-size: .75em;
+    top: -3%;
+}
+
+.input-component input:focus{
+    padding-top: 1rem;
+}
+
+.input-component input:not(:placeholder-shown){
+    padding-top: 1rem;
+}
