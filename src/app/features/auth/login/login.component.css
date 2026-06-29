@@ -1,0 +1,7 @@
+.background-image{
+    background-image: url("/images/login-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: contrast(120%);
+    filter: saturate(0);
+}

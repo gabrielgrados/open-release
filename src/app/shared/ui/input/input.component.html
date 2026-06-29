@@ -1,0 +1,22 @@
+<div class="w-full flex flex-col">
+  <label for="" class="text-sm text-neutral-600 font-medium">{{ label() }}</label>
+  <input
+    [id]="label()"
+    [type]="type()"
+    [value]="value()"
+    [disabled]="disabled()"
+    (input)="onInput($event)"
+    class="outline-none border-2 h-11 border-neutral-200 px-3 rounded-xl text-sm focus:border-neutral-400 transition-colors disabled:opacity-50"
+    [placeholder]="placeholder()"
+    [autocomplete]="autocomplete() ? 'on' : 'off'"
+  />
+
+  @if (touched() && errors().length > 0) {
+    @for (error of errors(); track error.kind) {
+      <small class="text-red-500">
+        {{ errorMessages()[error.kind] ?? error.message ?? 'Campo inválido' }}
+      </small>
+    }
+  }
+
+</div>
